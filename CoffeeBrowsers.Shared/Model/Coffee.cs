@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CoffeeBrowsers.Model
+﻿namespace CoffeeBrowser.Model
 {
-    class Coffee
-    {
-    }
+  public class Coffee
+  {
+    public string Name { get; set; }
+    public string Description { get; set; }
+  }
 }
