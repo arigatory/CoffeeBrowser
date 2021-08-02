@@ -29,6 +29,7 @@ namespace CoffeeBrowsers
             this.InitializeComponent();
             ViewModel = new MainViewModel(new CoffeeDataProvider());
             this.Loaded += MainPage_Loaded;
+
         }
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
