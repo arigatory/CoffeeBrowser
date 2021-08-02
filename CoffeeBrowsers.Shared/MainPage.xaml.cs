@@ -12,6 +12,8 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using CoffeeBrowser.ViewModel;
+using CoffeeBrowser.DataProvider;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,6 +27,15 @@ namespace CoffeeBrowsers
         public MainPage()
         {
             this.InitializeComponent();
+            ViewModel = new MainViewModel(new CoffeeDataProvider());
+            this.Loaded += MainPage_Loaded;
         }
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            await ViewModel.Load();
+        }
+
+        public MainViewModel ViewModel { get; set; }
     }
 }
