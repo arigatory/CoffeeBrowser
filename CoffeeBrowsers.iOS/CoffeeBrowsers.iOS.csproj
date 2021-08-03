@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>cc4825ac-83f0-4904-8e87-97afdc633346</ProjectGuid>
+    <ProjectGuid>{CC4825AC-83F0-4904-8E87-97AFDC633346}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>CoffeeBrowsers</RootNamespace>
@@ -12,6 +12,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <ResourcesDirectory>..\CoffeeBrowsers.Shared\Strings</ResourcesDirectory>
+    <ProvisioningType>manual</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,9 +114,18 @@
     <BundleResource Include="Resources\Fonts\uno-fluentui-assets.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" Version="3.9.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="Uno.WinUI" Version="3.8.13" />
     <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.9.1" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.17" />
     <PackageReference Include="Uno.Extensions.Logging.OSLog " Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
@@ -151,11 +161,7 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Media" Visible="false" />
-    <Folder Include="Media\AppIcons" Visible="false" />
-    <Folder Include="Media\LaunchImages" Visible="false" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\CoffeeBrowsers.Shared\CoffeeBrowsers.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

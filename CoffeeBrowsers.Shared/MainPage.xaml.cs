@@ -27,7 +27,7 @@ namespace CoffeeBrowsers
         public MainPage()
         {
             this.InitializeComponent();
-            ViewModel = new MainViewModel(new CoffeeDataProvider());
+            ViewModel = new MainViewModel(new CoffeeWepApiDataProvider());
             this.Loaded += MainPage_Loaded;
 
         }
